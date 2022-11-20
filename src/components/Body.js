@@ -1,6 +1,6 @@
-import Stories from "./Stories"
-import Sidebar from "./Sidebar"
-import Posts from "./Posts"
+import Stories from "./Stories";
+import Sidebar from "./Sidebar";
+import Posts from "./Posts";
 
 
 
@@ -11,7 +11,7 @@ export default function Body(){
                 <Stories/>
                 <Posts/>
             </div>
-            <Sidebar/>            
+            <Sidebar/>
         </div>
-    )
+    );
 }

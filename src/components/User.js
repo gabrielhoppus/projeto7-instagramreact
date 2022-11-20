@@ -7,16 +7,16 @@ export default function User(){
         tag: "catanacomics"
     }
 
-    const [name, setName] = useState(user.name)
-    const [image, setImage] = useState(user.image)
+    const [name, setName] = useState(user.name);
+    const [image, setImage] = useState(user.image);
 
 
     function changeName(){
-        setName(prompt("Qual é o seu novo nome?"))
+        setName(prompt("Qual é o seu novo nome?"));
     }
 
     function changeImage(){
-        setImage(prompt("Qual é o link para a nova imagem?"))
+        setImage(prompt("Qual é o link para a nova imagem?"));
     }
 
     return (
@@ -30,7 +30,7 @@ export default function User(){
                 </span>
             </div>
         </div>
-    )
+    );
 }
 
 

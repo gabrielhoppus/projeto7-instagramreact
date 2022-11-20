@@ -2,58 +2,72 @@ import { useState } from "react";
 
 export default function Posts(){
     const post = [
-        {usuario: "meowed", imagem: "./assets/img/meowed.svg", conteudo: "./assets/img/gato-telefone.svg", curtido: "./assets/img/respondeai.svg", info: "respondeai", numero: 101523},
-        {usuario: "barked", imagem: "./assets/img/barked.svg", conteudo: "./assets/img/dog.svg", curtido: "./assets/img/adorable_animals.svg", info: "adorable_animals", numero: 99159}
+        {   
+            usuario: "meowed",
+            imagem: "./assets/img/meowed.svg",
+            conteudo: "./assets/img/gato-telefone.svg",
+            curtido: "./assets/img/respondeai.svg",
+            info: "respondeai",
+            numero: 101523
+        },
+        {
+            usuario: "barked",
+            imagem: "./assets/img/barked.svg",
+            conteudo: "./assets/img/dog.svg",
+            curtido: "./assets/img/adorable_animals.svg",
+            info: "adorable_animals",
+            numero: 99159
+        }
     ]
 
     return (
             <div class="posts">
-                {post.map((posts) => 
-                    <Post 
-                        usuario={posts.usuario} 
-                        imagem={posts.imagem} 
-                        conteudo={posts.conteudo} 
+                {post.map((posts) =>
+                    <Post
+                        usuario={posts.usuario}
+                        imagem={posts.imagem}
+                        conteudo={posts.conteudo}
                         curtido={posts.curtido}
                         info={posts.info}
                         numero={posts.numero}/>
                         )}
             </div>
         
-    )
+    );
 }
 
 function Post(props){
 
-    const defaultIcon = "bookmark-outline"
-    const markedIcon = "bookmark"
-    const noLike = "heart-outline"
-    const yesLike = "heart"
-    const [icon, setIcon] = useState(defaultIcon)
-    const [like, setLike] = useState(noLike)
-    const [likes, setLikes] = useState(props.numero)
+    const defaultIcon = "bookmark-outline";
+    const markedIcon = "bookmark";
+    const noLike = "heart-outline";
+    const yesLike = "heart";
+    const [icon, setIcon] = useState(defaultIcon);
+    const [like, setLike] = useState(noLike);
+    const [likes, setLikes] = useState(props.numero);
 
     function savePost(){
         if (icon === defaultIcon){
-            setIcon(markedIcon)
+            setIcon(markedIcon);
         }else{
-            setIcon(defaultIcon)
+            setIcon(defaultIcon);
         }  
     }
 
     function likeToggle(){
         if (like === noLike){
-            setLike(yesLike)
-            setLikes(likes+1)
+            setLike(yesLike);
+            setLikes(likes+1);
         }else{
-            setLike(noLike)
-            setLikes(likes-1)
+            setLike(noLike);
+            setLikes(likes-1);
         }
     }
 
     function likePost(){
     if (like === noLike){
-        setLike(yesLike)
-        setLikes(likes+1)
+        setLike(yesLike);
+        setLikes(likes+1);
         }else{
             return;
         }
@@ -92,5 +106,5 @@ function Post(props){
                 </div>
             </div>
         </div>
-    )
+    );
 }

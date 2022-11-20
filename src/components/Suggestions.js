@@ -15,8 +15,7 @@ export default function Suggestions(){
                 </div>
                 {sugestao.map((suggestion) => <Suggestion usuario={suggestion.usuario} imagem={suggestion.imagem}/>)}
             </div>
-        
-    )
+    );
 }
 
 function Suggestion(props){
@@ -28,8 +27,8 @@ function Suggestion(props){
                     <div class="nome">{props.usuario}</div>
                     <div class="razao">Segue você</div>
                 </div>
-            </div>    
+            </div>
             <div class="seguir">Seguir</div>
         </div>
-    )
+    );
 }

@@ -8,7 +8,7 @@ export default function Stories(){
         {usuario: "respondeai", imagem: "assets/img/respondeai.svg"},
         {usuario: "filomoderna", imagem: "assets/img/filomoderna.svg"},
         {usuario: "memeriagourmet", imagem: "assets/img/memeriagourmet.svg"}
-    ]    
+    ]
     return (
         <div class="stories">
             {stories.map((story) => <Story usuario={story.usuario} imagem={story.imagem}/>)}
@@ -16,7 +16,7 @@ export default function Stories(){
                 <ion-icon name="chevron-forward-circle"></ion-icon>
             </div>
         </div>
-    )   
+    );
 }
 
 function Story(props){
@@ -29,5 +29,5 @@ function Story(props){
                 {props.usuario}
             </div>
         </div>
-    )
+    );
 }

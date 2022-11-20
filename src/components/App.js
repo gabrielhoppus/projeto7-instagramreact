@@ -1,5 +1,5 @@
-import Body from "./Body"
-import NavBar from "./Navbar"
+import Body from "./Body";
+import NavBar from "./Navbar";
 
 export default function App(){
     return(
@@ -7,5 +7,5 @@ export default function App(){
             <NavBar/>
             <Body/>
         </div>
-    )
+    );
 }

@@ -1,5 +1,5 @@
-import User from "./User"
-import Suggestions from "./Suggestions"
+import User from "./User";
+import Suggestions from "./Suggestions";
 
 export default function Sidebar(){
     return (
@@ -9,10 +9,10 @@ export default function Sidebar(){
             <div class="links">
                 Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos • Localizações • Contas mais relevantes •
                 Hashtags • Idioma
-            </div>    
+            </div>
             <div class="copyright">
                 © 2021 INSTAGRAM DO FACEBOOK
             </div>
         </div>
-    )
+    );
 }
