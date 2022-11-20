@@ -11,6 +11,10 @@ body {
   font-size: 14px;
 }
 
+ion-icon[name="heart"]{
+  color: red;
+}
+
 .navbar {
   width: 100%;
   display: flex;
