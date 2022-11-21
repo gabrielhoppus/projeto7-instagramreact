@@ -1,4 +1,5 @@
 import { useState } from "react";
+import React from 'react'
 
 export default function User(){
     const user = {
@@ -7,8 +8,17 @@ export default function User(){
         tag: "catanacomics"
     }
 
-    const [name, setName] = useState(user.name);
-    const [image, setImage] = useState(user.image);
+    return (
+        <div data-test="user" class="usuario">
+            <Users name={user.name} image={user.image} tag={user.tag}/>
+        </div>
+    );
+}
+
+function Users(props){
+    
+    const [name, setName] = useState(props.name);
+    const [image, setImage] = useState(props.image);
 
 
     function changeName(){
@@ -20,17 +30,15 @@ export default function User(){
     }
 
     return (
-        <div data-test="user" class="usuario">
-            <img data-test="profile-image" onClick={changeImage} src= {image ? image : user.image} />
-            <div class="texto">
-                <strong>{user.tag}</strong>
-                <span data-test="name">
-                    {name ? name : user.name}
-                    <ion-icon data-test="edit-name" onClick={changeName} name="pencil"></ion-icon>
-                </span>
-            </div>
+        <React.Fragment>
+        <img data-test="profile-image" onClick={changeImage} src= {image ? image : props.image} />
+        <div class="texto">
+            <strong>{props.tag}</strong>
+            <span data-test="name">
+                {name ? name : props.name}
+                <ion-icon data-test="edit-name" onClick={changeName} name="pencil"></ion-icon>
+            </span>
         </div>
-    );
+        </React.Fragment>
+    )
 }
-
-

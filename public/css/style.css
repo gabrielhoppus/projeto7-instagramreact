@@ -11,9 +11,41 @@ body {
   font-size: 14px;
 }
 
-ion-icon[name="heart"]{
+.conteudo{
+  position: relative;
+}
+
+.conteudo ion-icon{
+  color: white;
+  width: 100px;
+  height: 100px;
+  left: 40%;
+  top: 40%;
+  position: absolute;
+  z-index: 3;
+  animation: fadeInOut 1.3s linear 0.5s forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    scale: 0.2;
+  }
+  50% {
+    opacity: 1;
+    scale: 0.5;
+  }
+  100% {
+    opacity: 0;
+    scale: 1;
+  }
+}
+
+.acoes ion-icon[name="heart"]{
   color: red;
 }
+
+
 
 .navbar {
   width: 100%;

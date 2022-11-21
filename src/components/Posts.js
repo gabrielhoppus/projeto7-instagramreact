@@ -40,11 +40,14 @@ function Post(props){
 
     const defaultIcon = "bookmark-outline";
     const markedIcon = "bookmark";
+    const defaultImageLike = ""
     const noLike = "heart-outline";
     const yesLike = "heart";
+    const imageLike = "heart"
     const [icon, setIcon] = useState(defaultIcon);
     const [like, setLike] = useState(noLike);
     const [likes, setLikes] = useState(props.numero);
+    const [animation, setAnimation] = useState(defaultImageLike)
 
     function savePost(){
         if (icon === defaultIcon){
@@ -68,6 +71,7 @@ function Post(props){
     if (like === noLike){
         setLike(yesLike);
         setLikes(likes+1);
+        setAnimation(imageLike)
         }else{
             return;
         }
@@ -84,8 +88,9 @@ function Post(props){
                     <ion-icon name="ellipsis-horizontal"></ion-icon>
                 </div>
             </div>    
-            <div class="conteudo">
-                <img data-test="post-image" onClick={likePost} src={props.conteudo} />
+            <div onDoubleClick={likePost} class="conteudo">
+                <img data-test="post-image" src={props.conteudo} />
+                <ion-icon name={animation ? animation : defaultImageLike}></ion-icon>
             </div>    
             <div class="fundo">
                 <div class="acoes">
