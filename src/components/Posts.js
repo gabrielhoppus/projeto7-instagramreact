@@ -21,9 +21,9 @@ export default function Posts(){
     ]
 
     return (
-            <div class="posts">
+            <div className="posts">
                 {post.map((posts) =>
-                    <Post
+                    <Post key={posts.imagem}
                         usuario={posts.usuario}
                         imagem={posts.imagem}
                         conteudo={posts.conteudo}
@@ -78,22 +78,22 @@ function Post(props){
     }
 
     return (
-        <div data-test="post" class="post">
-            <div class="topo">
-                <div class="usuario">
+        <div data-test="post" className="post">
+            <div className="topo">
+                <div className="usuario">
                     <img src={props.imagem} />
                     {props.usuario}
                 </div>
-                <div class="acoes">
+                <div className="acoes">
                     <ion-icon name="ellipsis-horizontal"></ion-icon>
                 </div>
             </div>    
-            <div onDoubleClick={likePost} class="conteudo">
+            <div onDoubleClick={likePost} className="conteudo">
                 <img data-test="post-image" src={props.conteudo} />
                 <ion-icon name={animation ? animation : defaultImageLike}></ion-icon>
             </div>    
-            <div class="fundo">
-                <div class="acoes">
+            <div className="fundo">
+                <div className="acoes">
                     <div>
                         <ion-icon data-test="like-post" onClick={likeToggle} name={like ? like : noLike}></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
@@ -103,9 +103,9 @@ function Post(props){
                         <ion-icon data-test="save-post" onClick={savePost} name={icon ? icon : defaultIcon}></ion-icon>
                     </div>
                 </div>    
-                <div class="curtidas">
+                <div className="curtidas">
                     <img src={props.curtido} />
-                    <div class="texto">
+                    <div className="texto">
                         Curtido por <strong>{props.info}</strong> e <strong data-test="likes-number">outras {likes.toLocaleString("pt-br")} pessoas</strong>
                     </div>
                 </div>

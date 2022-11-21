@@ -9,8 +9,8 @@ export default function User(){
     }
 
     return (
-        <div data-test="user" class="usuario">
-            <Users name={user.name} image={user.image} tag={user.tag}/>
+        <div data-test="user" className="usuario">
+            <Users key={user.name} name={user.name} image={user.image} tag={user.tag}/>
         </div>
     );
 }
@@ -32,7 +32,7 @@ function Users(props){
     return (
         <React.Fragment>
         <img data-test="profile-image" onClick={changeImage} src= {image ? image : props.image} />
-        <div class="texto">
+        <div className="texto">
             <strong>{props.tag}</strong>
             <span data-test="name">
                 {name ? name : props.name}

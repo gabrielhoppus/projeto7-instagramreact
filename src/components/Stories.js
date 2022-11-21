@@ -10,9 +10,9 @@ export default function Stories(){
         {usuario: "memeriagourmet", imagem: "assets/img/memeriagourmet.svg"}
     ]
     return (
-        <div class="stories">
-            {stories.map((story) => <Story usuario={story.usuario} imagem={story.imagem}/>)}
-            <div class="setinha">
+        <div className="stories">
+            {stories.map((story) => <Story key={story.usuario} usuario={story.usuario} imagem={story.imagem}/>)}
+            <div className="setinha">
                 <ion-icon name="chevron-forward-circle"></ion-icon>
             </div>
         </div>
@@ -21,11 +21,11 @@ export default function Stories(){
 
 function Story(props){
     return (
-        <div class="story">
-            <div class="imagem">
+        <div className="story">
+            <div className="imagem">
                 <img src={props.imagem} />
             </div>
-            <div class="usuario">
+            <div className="usuario">
                 {props.usuario}
             </div>
         </div>
